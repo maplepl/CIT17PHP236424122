@@ -1,26 +1,51 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get numbers from the form
+    $a = $_POST['a'];
+    $b = $_POST['b'];
+
+    // Calculations
+    $sum = $a + $b;
+    $diff = $a - $b;
+    $prod = $a * $b;
+    $quot = ($b != 0) ? $a / $b : "undefined (division by zero)";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Math</title>
 </head>
 
 <body>
-    <h2>Simple Math</h2>
-    <?php
-    $a = 10;
-    $b = 5;
+    <h2>Simple Math Calculator</h2>
 
-    echo "a = $a, b = $b<br>";
-    echo "Sum: " . ($a + $b) . "<br>";
-    echo "Difference: " . ($a - $b) . "<br>";
-    echo "Product: " . ($a * $b) . "<br>";
-    echo "Quotient: " . ($a / $b) . "<br>";
-    ?>
+    <form method="post">
+        <label>Enter first number:</label>
+        <input type="number" name="a" required><br><br>
+
+        <label>Enter second number:</label>
+        <input type="number" name="b" required><br><br>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
+        <h3>Results:</h3>
+        <p>Sum: <?php echo $sum; ?></p>
+        <p>Difference: <?php echo $diff; ?></p>
+        <p>Product: <?php echo $prod; ?></p>
+        <p>Quotient: <?php echo $quot; ?></p>
+    <?php endif; ?>
+
     <br><br>
-    <a href="index.php">Back to Home</a>
+    <a href="index.php">
+        <button type="button">Home</button>
+    </a>
+
 </body>
 
 </html>

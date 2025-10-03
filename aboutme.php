@@ -25,6 +25,12 @@
     echo "<li> favorite food: " . $food . "</li>";
     echo "<li> present: " . $present . "</li>";
     ?>
+
+    <br><br>
+    <a href="index.php">
+        <button type="button">Home</button>
+    </a>
+
 </body>
 
 </html>
