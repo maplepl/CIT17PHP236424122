@@ -25,6 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
         <p>After swapping: X = <?php echo $x; ?>, Y = <?php echo $y; ?></p>
     <?php endif; ?>
+
+    <br><br>
+    <a href="index.php">
+        <button type="button">Home</button>
+    </a>
+
 </body>
 
 </html>
